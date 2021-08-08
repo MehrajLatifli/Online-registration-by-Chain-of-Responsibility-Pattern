@@ -9,7 +9,7 @@
             xmlns:views="clr-namespace:Online_registration_by_CoR.Views.User_control"
                 xmlns:vm="clr-namespace:Online_registration_by_CoR.ViewModels"
         
-        Title="Live store" MinHeight="750" MinWidth="850" MaxHeight="850" MaxWidth="1000"  WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="livE store" MinHeight="750" MinWidth="850" MaxHeight="850" MaxWidth="1000"  WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Icon="/Online registration by CoR;component/Images/Default.png">
 
     <Window.DataContext>
         <vm:MainViewModel/>
