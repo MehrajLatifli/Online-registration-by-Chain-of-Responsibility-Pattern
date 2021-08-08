@@ -89,17 +89,7 @@ namespace Online_registration_by_CoR.ViewModels
         }
         private void NavigateTo_SingUp(object obj)
         {
-            //string stepofchain = "SingUp Chain";
 
-            //IChain chain = new SingUp_Chain();
-            //IChain chain2 = new SingIn_Chain();
-            //IChain chain3 = new Order_Chain();
-
-            //chain.SetNextChain(chain2);
-            //chain2.SetNextChain(chain3);
-
-            //User U = new User(stepofchain);
-            //chain.User_if_else(U);
 
             MainWindows.UserDockPanel.Visibility = Visibility.Hidden;
 
@@ -110,7 +100,7 @@ namespace Online_registration_by_CoR.ViewModels
             MainWindows.Order_ContentControl.Visibility = Visibility.Hidden;
 
 
-            //SingUpViewModel_UCs.SingUp_UCs.NameTBox.IsEnabled = false;
+
 
         }
 
@@ -145,7 +135,6 @@ namespace Online_registration_by_CoR.ViewModels
             
 
 
-            // MainWindows = new MainWindow();
             GotoSingIn_Command = new RelayCommand(NavigateTo_SingIn);
             GotoSingUp_Command = new RelayCommand(NavigateTo_SingUp);
             GotoOrder_Command = new RelayCommand(NavigateTo_Order);

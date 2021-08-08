@@ -33,15 +33,12 @@ namespace Online_registration_by_CoR.ViewModels
 
         public User User { get { return _User; } set { _User = value; } }
 
-        //private User _user;
 
-        //public User User { get { return _user; } set { _user = value; OnpropertyChanged(); } }
 
 
         public RelayCommand SingUpComplateCommand { get; set; }
         public RelayCommand GetCodeCommand { get; set; }
 
-       // SingUpViewModel_UC SingUpViewModel_UCs { get; set; }
 
 
 
@@ -152,7 +149,7 @@ namespace Online_registration_by_CoR.ViewModels
                 }
 
 
-              //  chain.SetNextChain(this, SingInViewModel_UCs, OrderViewModel_UCs);
+
 
             });
 
