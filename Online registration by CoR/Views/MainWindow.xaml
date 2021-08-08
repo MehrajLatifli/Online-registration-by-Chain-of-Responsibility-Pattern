@@ -1,0 +1,92 @@
+﻿<Window x:Class="Online_registration_by_CoR.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Online_registration_by_CoR"
+        mc:Ignorable="d"
+        
+            xmlns:views="clr-namespace:Online_registration_by_CoR.Views.User_control"
+                xmlns:vm="clr-namespace:Online_registration_by_CoR.ViewModels"
+        
+        Title="Live store" MinHeight="750" MinWidth="850" MaxHeight="850" MaxWidth="1000"  WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:SingInViewModel_UC}">
+            <views:SingIn_UC/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SingUpViewModel_UC}">
+            <views:SingUp_UC/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:OrderViewModel_UC}">
+            <views:Order_UC/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Background="{StaticResource MenuBackroundColor}">
+            <WrapPanel>
+                <Grid x:Name="HeaderGrid">
+                    
+                    <Grid.ColumnDefinitions>
+                        
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                        
+                    </Grid.ColumnDefinitions>
+            
+                    <Grid x:Name="LogoGrid" Grid.Column="0" Margin="20,10,20,10">
+
+                      <Image Source="/Online registration by CoR;component/Images/logo2.png"></Image>
+                
+                     </Grid>
+
+                    <Grid x:Name="SingUp_ButtonGrid" Grid.Column="1">
+
+                        <Button x:Name="SingUp_Button" Style="{StaticResource Button}" Content=" Sing Up" Width="150" Margin="10,10,25,10" Command="{Binding GotoSingUp_Command}"></Button>
+                    </Grid>
+                    
+                    <Grid x:Name="SingIn_ButtonGrid" Grid.Column="2">
+                        <Button x:Name="SingIn_Button" Style="{StaticResource Button}" Content=" Sing In" Width="150" Margin="10,10,25,10" Command="{Binding GotoSingIn_Command}"></Button>
+                    </Grid>
+
+
+
+                    <Grid x:Name="Order_ButtonGrid" Grid.Column="3">
+
+                        <Button x:Name="Order_Button" Style="{StaticResource Button}" Content="Order" Width="150" Margin="10,10,25,10" Command="{Binding GotoOrder_Command}"></Button>
+                    </Grid>
+                    
+                </Grid>
+            </WrapPanel>
+        </DockPanel>
+
+        <DockPanel x:Name="UserDockPanel" Grid.Row="1" Background="{StaticResource MenuBackroundColor}">
+            <StackPanel>
+                
+                    <StackPanel HorizontalAlignment="Center" >
+                        <Image Source="/Online registration by CoR;component/Images/Default.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                    </StackPanel>
+       
+            </StackPanel>
+        </DockPanel>
+
+        <ContentControl x:Name="SingIn_ContentControl" Grid.Row="1" Content="{Binding SelectedSingInViewModel}" Visibility="Hidden"></ContentControl>
+        <ContentControl x:Name="SingUp_ContentControl" Grid.Row="1" Content="{Binding SelectedSingUpViewModel}" Visibility="Hidden"></ContentControl>
+        <ContentControl x:Name="Order_ContentControl" Grid.Row="1" Content="{Binding SelectedOrderViewModel}" Visibility="Hidden"></ContentControl>
+
+
+
+    </Grid>
+</Window>
